@@ -2,7 +2,7 @@ version: '3.8'
 services:
   vprodb:
     build:
-        context: ./vprofile-project-container/db
+        context: ./db
     image: ibkn/vprofiledb
     container_name: vprodb
     ports:
@@ -28,7 +28,7 @@ services:
 
   vproapp:
     build:
-        context: ./vprofile-project-container/app
+        context: ./app
     image: ibkn/vprofileapp
     container_name: vproapp
     ports:
@@ -38,7 +38,7 @@ services:
   
   vproweb:
     build:
-        context: ./vprofile-project-container/web
+        context: ./web
     image: ibkn/vprofileweb
     container_name: vproweb
     ports:
