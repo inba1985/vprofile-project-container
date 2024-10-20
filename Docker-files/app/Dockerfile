@@ -1,5 +1,5 @@
 FROM openjdk:11 AS BUILD_IMAGE
-RUN apt update && apt maven install -y
+RUN apt update && apt install maven -y
 RUN git clone https://github.com/inba1985/vprofile-project-container.git
 RUN cd vprofile-project-container && git checkout containers && mvn install
 
