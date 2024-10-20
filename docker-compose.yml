@@ -11,13 +11,10 @@ services:
       - vprodbdata:/var/lib/mysql
     environment:
       - MYSQL_ROOT_PASSWORD=vprodbpass
-  redis:
-    image: "redis:alpine"
   vprocache01:
     image: memcached
     ports:
       - "11211:11211"
-
   vpromq01:
     image: rabitmq
     ports:
@@ -25,7 +22,6 @@ services:
     environment:
       - RABITMQ_DEFAULT_USER=guest
       - RABITMQ_DEFAULT_PASS=guest
-
   vproapp:
     build:
         context: ./Docker-files/app
@@ -35,7 +31,6 @@ services:
       - "8080:8080"
     volumes:
       - vprodbdata:/usr/local/tomcat/webapps
-  
   vproweb:
     build:
         context: ./Docker-files/web
@@ -43,7 +38,6 @@ services:
     container_name: vproweb
     ports:
       - "80:80"
-
 volumes:
   vprodbdata: {}
   vproappdata: {}
