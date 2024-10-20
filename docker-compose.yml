@@ -2,7 +2,7 @@ version: '3.8'
 services:
   vprodb:
     build:
-        context: ./db
+        context: ./Dokcer-files/db
     image: ibkn/vprofiledb
     container_name: vprodb
     ports:
@@ -28,7 +28,7 @@ services:
 
   vproapp:
     build:
-        context: ./app
+        context: ./Dokcer-files/app
     image: ibkn/vprofileapp
     container_name: vproapp
     ports:
@@ -38,7 +38,7 @@ services:
   
   vproweb:
     build:
-        context: ./web
+        context: ./Dokcer-files/web
     image: ibkn/vprofileweb
     container_name: vproweb
     ports:
